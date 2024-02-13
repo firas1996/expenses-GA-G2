@@ -1,11 +1,12 @@
 import "./ExpensesMenu.css";
 import ExpenseItem from "./ExpenseItem";
 import Chart from "./ExpensesChart/Chart";
+import ExpensesData from "./ExpensesChart/ExpensesData";
 
 const ExpensesMenu = ({ data }) => {
   return (
     <div className="menu">
-      <Chart />
+      <ExpensesData />
       {data.map((expense) => {
         return (
           <ExpenseItem
