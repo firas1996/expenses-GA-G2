@@ -6,7 +6,7 @@ import ExpensesData from "./ExpensesChart/ExpensesData";
 const ExpensesMenu = ({ data }) => {
   return (
     <div className="menu">
-      <ExpensesData />
+      <ExpensesData expenses={data} />
       {data.map((expense) => {
         return (
           <ExpenseItem
