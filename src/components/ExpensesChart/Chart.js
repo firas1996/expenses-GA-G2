@@ -1,9 +1,10 @@
 import React from "react";
 import ChartBar from "./ChartBar";
+import "./Chart.css";
 
 const Chart = () => {
   return (
-    <div>
+    <div className="chart">
       <ChartBar />
       <ChartBar />
       <ChartBar />
