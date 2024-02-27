@@ -3,11 +3,20 @@ import ExpenseItem from "./ExpenseItem";
 import Chart from "./ExpensesChart/Chart";
 import ExpensesData from "./ExpensesChart/ExpensesData";
 import ExpensesFilter from "./ExpensesFilter";
+import { useState } from "react";
 
 const ExpensesMenu = ({ data }) => {
+  const years = [
+    ...new Set(data.map((item) => item.date.getFullYear()).sort()),
+  ];
+  const [selectedYear, setSelectedYear] = useState(years[0]);
   return (
     <div className="menu">
-      <ExpensesFilter />
+      <ExpensesFilter
+        years={years}
+        setSelectedYear={setSelectedYear}
+        selectedYear={selectedYear}
+      />
       <ExpensesData expenses={data} />
       {data.map((expense) => {
         return (

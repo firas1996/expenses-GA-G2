@@ -24,8 +24,8 @@ const ExpensesData = ({ expenses }) => {
   const total = values.reduce((x, y) => {
     return x + y;
   });
-  console.log(total);
-  console.log(chartData);
+  // console.log(total);
+  // console.log(chartData);
   return <Chart chartData={chartData} max={max} total={total} />;
 };
 export default ExpensesData;
