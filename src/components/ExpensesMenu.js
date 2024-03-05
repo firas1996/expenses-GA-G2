@@ -7,11 +7,14 @@ import { useState } from "react";
 
 const ExpensesMenu = ({ data }) => {
   const years = [
+    "All",
     ...new Set(data.map((item) => item.date.getFullYear()).sort()),
   ];
   const [selectedYear, setSelectedYear] = useState(years[0]);
   const filtredData = data.filter((item) => {
-    return item.date.getFullYear() == selectedYear;
+    return selectedYear == "All"
+      ? true
+      : item.date.getFullYear().toString() === selectedYear;
   });
   return (
     <div className="menu">
