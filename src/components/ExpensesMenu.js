@@ -10,6 +10,9 @@ const ExpensesMenu = ({ data }) => {
     ...new Set(data.map((item) => item.date.getFullYear()).sort()),
   ];
   const [selectedYear, setSelectedYear] = useState(years[0]);
+  const filtredData = data.filter((item) => {
+    return item.date.getFullYear() == selectedYear;
+  });
   return (
     <div className="menu">
       <ExpensesFilter
@@ -17,8 +20,8 @@ const ExpensesMenu = ({ data }) => {
         setSelectedYear={setSelectedYear}
         selectedYear={selectedYear}
       />
-      <ExpensesData expenses={data} />
-      {data.map((expense) => {
+      <ExpensesData expenses={filtredData} />
+      {filtredData.map((expense) => {
         return (
           <ExpenseItem
             title={expense.title}
