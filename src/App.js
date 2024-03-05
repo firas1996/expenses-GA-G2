@@ -1,4 +1,4 @@
-import ExpenseItem from "./components/ExpenseItem";
+import AddExpense from "./components/AddExpense";
 import ExpensesMenu from "./components/ExpensesMenu";
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
   ];
   return (
     <div>
+      <AddExpense />
       <ExpensesMenu data={expensesList} />
     </div>
   );
